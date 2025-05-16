@@ -20,3 +20,10 @@ class CircleShape(pygame.sprite.Sprite):
     def update(self, dt):
         # sub-classes must override
         pass
+    
+    def collides(self, other):
+      if isinstance(other, CircleShape):
+          distance = self.position.distance_to(other.position)
+          return distance < (self.radius + other.radius)
+      else:
+        raise TypeError("collides() expects a CircleShape instance")
