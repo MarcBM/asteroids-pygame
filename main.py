@@ -16,6 +16,10 @@ def main():
         if event.type == pygame.QUIT:
             return
     
+    # Update - FIRST UPDATE STEP
+    player.update(dt)  # Update the player
+    
+    # Draw - FIRST DRAW STEP
     screen.fill((0, 0, 0))  # Fill the screen with black
     player.draw(screen)  # Draw the player
     
